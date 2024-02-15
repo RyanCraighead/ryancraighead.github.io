@@ -1,107 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript">
-  window.__SIDESHIFT__ = {
-    parentAffiliateId: "CGo6CAjtih",
-    defaultDepositMethodId: "btc",
-    defaultSettleMethodId: "ltc",
-    settleAddress: "ltc1qwrpws5lannqqrz8dex6uytyvwz8jnrv3q7qzta",
-    type: "fixed",
-    settleAmount: "10",
-  }
-  </script>
-  <script src="https://sideshift.ai/static/js/main.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Tree</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            justify-content: space-between; /* Space items with margin on the sides */
+            align-items: flex-start; /* Align items at the start of the container */
             height: 100vh;
+            padding: 20px; /* Padding around the content */
             margin: 0;
         }
-        .profile {
-            text-align: center;
-            margin-bottom: 30px;
+        .column {
+            width: 45%; /* Set column width to 45% */
+            background-color: #333; /* Column background color */
+            margin: 10px; /* Margin between columns */
+            padding: 20px; /* Padding inside columns */
+            border-radius: 8px; /* Rounded corners for columns */
+            box-shadow: 0 0 10px #444; /* Box-shadow for columns */
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
         }
-        .profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .profile h1 {
-            margin-top: 10px;
-        }
-        .link-container {
-            width: 100%;
-            max-width: 300px;
+        .column h2 {
+            color: #fff; /* Title color */
         }
         .link {
-            display: block;
-            background: #ffffff;
-            color: #333333;
-            padding: 15px 20px;
-            margin: 5px 0;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            font-weight: bold;
+            color: #0af; /* Link color */
+            background-color: #222; /* Link background color */
+            padding: 10px 15px; /* Padding inside links */
+            margin-bottom: 10px; /* Margin between links */
+            border-radius: 5px; /* Rounded corners for links */
+            text-align: center; /* Center text inside links */
+            text-decoration: none; /* Remove underline from links */
+            display: block; /* Display links as block */
+            transition: background-color 0.3s; /* Transition for hover effect */
         }
         .link:hover {
-            background-color: #e8e8e8;
+            background-color: #0af; /* Background color on hover */
+            color: #fff; /* Text color on hover */
+        }
+        /* Styling for the SideShift button */
+        #sideshift-modal-button {
+            -webkit-appearance: none;
+            color: #111; /* Button text color */
+            background-color: #e85a43; /* Button background color */
+            transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            text-align: center;
+            padding: 0.875rem 1rem;
+            border-radius: 0.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+            min-width: 13rem;
+            border: none;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+        #sideshift-modal-button:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
-    <style scoped>
-#sideshift-modal-button {
-  -webkit-appearance: none;
-  color: rgb(17, 11, 11);
-  background-color: rgb(232, 90, 67);
-  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  text-align: center;
-  padding: 0.875rem 1rem;
-  border-radius: 0.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  min-width: 13rem;
-  border: none;
-  cursor: pointer;
-  margin: 0 auto;
-}
-
-#sideshift-modal-button:hover {
-  opacity: 0.9;
-}
-</style>
-
-<button onClick="window.sideshift.show()" id="sideshift-modal-button">
-  Shift Crypto
-</button>
-    <div class="profile">
-        <img src="profile-placeholder.png" alt="Profile Picture">
-        <h1>@ryancraighead</h1>
+    <div class="column">
+        <h2>Self Custody</h2>
+        <a href="https://link-to-your-custody-resource.com" class="link">Custody Resource</a>
+        <!-- Add more links as needed -->
+        <a href="#" class="link">Donate</a>
+        <a href="#" class="link">Swap</a>
     </div>
-    <div class="link-container">
-        <a href="https://link-to-your-first-resource.com" class="link">My Portfolio</a>
-        <a href="https://link-to-your-second-resource.com" class="link">Blog</a>
-        <a href="https://link-to-your-third-resource.com" class="link">Projects</a>
-        <a href="https://link-to-your-fourth-resource.com" class="link">Contact</a>
-        <a href="https://link-to-your-fifth-resource.com" class="link">Buy Me a Coffee</a>
+    <div class="column">
+        <h2>Cool Shit</h2>
+        <button onClick="window.sideshift.show()" id="sideshift-modal-button">
+          Shift Crypto
+        </button>
+        <!-- Add more content as needed -->
+        <a href="https://link-to-your-portfolio.com" class="link">Crypto Portfolio</a>
+        <!-- Repeat the structure above for more links -->
     </div>
+    <script src="https://sideshift.ai/static/js/main.js"></script>
+    <script type="text/javascript">
+        window.__SIDESHIFT__ = {
+            parentAffiliateId: "CGo6CAjtih",
+            defaultDepositMethodId: "btc",
+            defaultSettleMethodId: "ltc",
+            settleAddress: "ltc1qwrpws5lannqqrz8dex6uytyvwz8jnrv3q7qzta",
+            type: "fixed",
+            settleAmount: "10",
+        }
+    </script>
 </body>
 </html>
