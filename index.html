@@ -23,12 +23,11 @@
             background-color: #333; /* Column background color */
             padding: 20px; /* Padding inside columns */
             border-radius: 8px; /* Rounded corners for columns */
-            margin: 10px 0; /* Margin around columns */
+            margin: 10px; /* Margin around columns */
             box-shadow: 0px 0px 10px #444; /* Shadow effect for columns */
-        }
-        .profile {
-            text-align: center;
-            margin-bottom: 30px;
+            display: flex; /* Enable flex layout */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
         }
         .profile img {
             width: 100px;
@@ -36,50 +35,30 @@
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .profile h1 {
-            margin-top: 10px;
-            color: #fff; /* White text color */
+        .profile h1, .link, #sideshift-modal-button, .link-container a {
+            color: #fff; /* Adjust text color for visibility */
+            text-align: center; /* Center text */
+            margin: 10px 0; /* Add margin for spacing */
         }
-        .link-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .link, #sideshift-modal-button {
+            background-color: #e85a43; /* Button/link background color */
+            color: #110b0b; /* Button/link text color */
+            padding: 10px 15px; /* Padding inside buttons/links */
+            border-radius: 5px; /* Rounded corners for buttons/links */
+            text-decoration: none; /* Remove underline from links */
+            display: block; /* Ensure links take full width */
+            width: auto; /* Allow width to fit content */
         }
-        .link {
-            background: #ffffff;
-            color: #333333;
-            padding: 15px 20px;
-            margin: 5px 0;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            font-weight: bold;
-            width: calc(100% - 40px); /* Full width with padding accounted for */
+        #sideshift-modal-button:hover, .link:hover {
+            opacity: 0.8; /* Hover effect for buttons/links */
         }
-        .link:hover {
-            background-color: #e8e8e8;
-        }
-        #sideshift-modal-button {
-            -webkit-appearance: none;
-            color: rgb(17, 11, 11);
-            background-color: rgb(232, 90, 67);
-            transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 1rem;
-            line-height: 1.5rem;
-            text-align: center;
-            padding: 0.875rem 1rem;
-            border-radius: 0.25rem;
-            display: block; /* Changed to block to fill width */
-            margin: 0 auto 30px; /* Margin at the bottom */
-            cursor: pointer;
-            border: none;
-            width: calc(100% - 40px); /* Full width with padding accounted for */
-        }
-        #sideshift-modal-button:hover {
-            opacity: 0.9;
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column; /* Stack columns vertically on smaller screens */
+            }
+            .column {
+                width: 80%; /* Adjust column width for smaller screens */
+            }
         }
     </style>
 </head>
