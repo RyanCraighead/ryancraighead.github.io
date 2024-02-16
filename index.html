@@ -92,7 +92,7 @@
   integration="1f517a0d-5bf3-4095-a096-c6b11d8e4d91"
   blockchains='["ethereum","bsc"]'
 
-  
+
 ></div>
 <script src="https://integrate.depay.com/buttons/v12.js"></script>
 <noscript><a href="https://depay.com">Web3 Payments</a> are only supported with JavaScript enabled.</noscript>
@@ -118,5 +118,27 @@
         </script>
         <!-- Add additional content or links here as needed -->
     </div>
+
+    <script>
+        var tipButton = document.querySelector('.tip-button');
+        tipButton.addEventListener('click', function() {
+          if (typeof web3 === 'undefined') {
+            return alert('You need to install MetaMask to use this feature.')
+          }
+          var user_address = web3.eth.accounts[0];
+          if (typeof user_address === 'undefined') {
+            return alert('You need to log in MetaMask to use this feature.')
+          }
+          web3.eth.sendTransaction({
+            to: "0x66454C561Cf137F53321945758b0E4645E9EEae8",
+            from: user_address,
+            value: web3.toWei('0.005', 'ether'),
+          }, function (err, transactionHash) {
+            if (err) return alert('Thanks for trying out!');
+            alert('Thanks for the generosity!!');
+          })
+        })
+        </script>
+
 </body>
 </html>
